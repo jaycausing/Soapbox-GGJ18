@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAPBOX", "Assembly-CSharp.csproj", "{7DAD7814-E35E-770C-2146-DB87ACA50A1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAPBOX", "Assembly-CSharp-Editor.csproj", "{81E096BE-107B-CF67-A320-A7357C3AC7FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DAD7814-E35E-770C-2146-DB87ACA50A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DAD7814-E35E-770C-2146-DB87ACA50A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DAD7814-E35E-770C-2146-DB87ACA50A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DAD7814-E35E-770C-2146-DB87ACA50A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E096BE-107B-CF67-A320-A7357C3AC7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E096BE-107B-CF67-A320-A7357C3AC7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E096BE-107B-CF67-A320-A7357C3AC7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E096BE-107B-CF67-A320-A7357C3AC7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
