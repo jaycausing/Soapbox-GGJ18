@@ -40,6 +40,9 @@ public class ScreamInput : MonoBehaviour {
 			}
 		}
 		float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
-		Debug.Log("Current input level: " + level);
+		//Debug.Log("Current input level: " + level);
+		if(level > 0.6f){
+			Debug.Log("YEAH YOURE SCREAMING");
+		}
 	}
 }
