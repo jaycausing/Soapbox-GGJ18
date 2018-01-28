@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	public float startWait;
 	public float waveWait;
 	public GameObject bad;
+	public bool activeSpawn = false;
 
 	void Awake(){
 		world = GameObject.Find("World");
@@ -31,7 +32,8 @@ public class GameManager : MonoBehaviour {
         }
 
 		//Collider wCollider = world.GetComponent<Collider>();
-		StartCoroutine(SpawnEnemy());
+		if(activeSpawn)
+			StartCoroutine(SpawnEnemy());
 
 		/*AudioSource aud = GetComponent<AudioSource>;
 		aud.clip = Microphone.Start*/
