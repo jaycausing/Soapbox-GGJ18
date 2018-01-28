@@ -8,6 +8,8 @@ public class ScreamInput : MonoBehaviour {
 	int minFreq = 0;
 	int maxFreq = 0;
 
+	public GameObject soundwave;
+
 	void Awake(){
 		aud = Microphone.Start("Built-in Microphone", true, 5, 44100);
 	}
@@ -42,7 +44,7 @@ public class ScreamInput : MonoBehaviour {
 		float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
 		//Debug.Log("Current input level: " + level);
 		if(level > 0.6f){
-			Debug.Log("YEAH YOURE SCREAMING");
+			Instantiate(soundwave, transform.parent);
 		}
 	}
 }
