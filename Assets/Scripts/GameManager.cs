@@ -22,14 +22,6 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-
-		/*
-		Debug Log to Detect Devices
-		*/
-		foreach (string device in Microphone.devices) {
-            Debug.Log("Name: " + device);
-        }
 
 		//Collider wCollider = world.GetComponent<Collider>();
 		if(activeSpawn)
