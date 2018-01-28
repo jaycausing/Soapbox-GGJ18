@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ScreamInput : MonoBehaviour {
 
-	AudioClip aud;
-	int minFreq = 0;
-	int maxFreq = 0;
+	public AudioClip aud;
+	public int minFreq = 0;
+	public int maxFreq = 0;
 
 	public GameObject soundwave;
 
@@ -17,10 +17,10 @@ public class ScreamInput : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		Debug.Log("Device caps: " + minFreq.ToString() + ", " + maxFreq.ToString());
+		//Debug.Log("Device caps: " + minFreq.ToString() + ", " + maxFreq.ToString());
 
 		
-		Debug.Log("Is the mic recording? " + Microphone.IsRecording("Built-in Microphone"));
+		//Debug.Log("Is the mic recording? " + Microphone.IsRecording("Built-in Microphone"));
 
 
 	}
@@ -30,7 +30,8 @@ public class ScreamInput : MonoBehaviour {
 		//get mic volume
 		int dec = 128;
 		float[] waveData = new float[dec];
-		int micPosition = Microphone.GetPosition(null)-(dec+1); // null means the first microphone
+		int micPosition = (Microphone.GetPosition(null))-(dec+1); // null means the first microphone
+		Debug.Log("waveData: " + waveData.ToString());
 		aud.GetData(waveData, micPosition);
 
 		// Getting a peak on the last 128 samples
@@ -42,9 +43,10 @@ public class ScreamInput : MonoBehaviour {
 			}
 		}
 		float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
-		//Debug.Log("Current input level: " + level);
+		Debug.Log("Current input level: " + level);
 		if(level > 0.6f){
-			Instantiate(soundwave, transform.parent);
+			Instantiate(soundwave, transform.position, transform.rotation);
+			//Debug.Log("AAAAAAAAAAA");
 		}
 	}
 }
