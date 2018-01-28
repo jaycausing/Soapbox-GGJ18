@@ -140,6 +140,7 @@
      <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\ScreamInput.cs" />
+     <Compile Include="Assets\Scripts\SW_Collision.cs" />
      <Compile Include="Assets\SoundwaveScript.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />

@@ -31,7 +31,7 @@ public class ScreamInput : MonoBehaviour {
 		int dec = 128;
 		float[] waveData = new float[dec];
 		int micPosition = (Microphone.GetPosition(null))-(dec+1); // null means the first microphone
-		Debug.Log("waveData: " + waveData.ToString());
+		//Debug.Log("waveData: " + waveData.ToString());
 		aud.GetData(waveData, micPosition);
 
 		// Getting a peak on the last 128 samples
@@ -43,7 +43,7 @@ public class ScreamInput : MonoBehaviour {
 			}
 		}
 		float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
-		Debug.Log("Current input level: " + level);
+		//Debug.Log("Current input level: " + level);
 		if(level > 0.6f){
 			Instantiate(soundwave, transform.position, transform.rotation);
 			//Debug.Log("AAAAAAAAAAA");

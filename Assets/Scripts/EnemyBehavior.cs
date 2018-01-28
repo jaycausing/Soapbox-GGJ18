@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyBehavior : MonoBehaviour {
 
 	public Transform playerPos;
+	Transform world;
 
 	void Awake(){
 		GameObject p = GameObject.FindWithTag("Player");
@@ -14,6 +15,9 @@ public class EnemyBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		world = GameObject.FindWithTag("World").transform;
+		Physics.IgnoreCollision(world.GetComponent<Collider>(), GetComponent<Collider>());
+
 		NavMeshAgent agent = GetComponent<NavMeshAgent>();
 		agent.destination = playerPos.position;
 	}
@@ -22,4 +26,5 @@ public class EnemyBehavior : MonoBehaviour {
 	void Update () {
 		
 	}
+
 }
