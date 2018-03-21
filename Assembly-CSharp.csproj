@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EnemySpawner.cs" />
      <Compile Include="Assets\GoogleVR\Legacy\Scripts\Audio\GvrAudio.cs" />
      <Compile Include="Assets\GoogleVR\Legacy\Scripts\Audio\GvrAudioListener.cs" />
      <Compile Include="Assets\GoogleVR\Legacy\Scripts\Audio\GvrAudioRoom.cs" />

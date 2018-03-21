@@ -866,14 +866,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9288ac35c56ef48e38f7600f29fad32a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStart: 60
-  world: {fileID: 0}
+  timeStart: 3
+  world: {fileID: 100000, guid: 652db32247b604ec799b8be31cab3bca, type: 3}
   pplCount: 20
   spawnWait: 1
-  startWait: 10
+  startWait: 3
   waveWait: 5
   bad: {fileID: 1536257496952208, guid: 87a93637c16154b7ea91ebd42e845ce5, type: 2}
-  activeSpawn: 0
+  activeSpawn: 1
 --- !u!4 &1048333663
 Transform:
   m_ObjectHideFlags: 0
@@ -902,15 +902,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4067659521696122, guid: 87a93637c16154b7ea91ebd42e845ce5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.49
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 4067659521696122, guid: 87a93637c16154b7ea91ebd42e845ce5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7.4
+      value: -8.9
       objectReference: {fileID: 0}
     - target: {fileID: 4067659521696122, guid: 87a93637c16154b7ea91ebd42e845ce5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 32.54
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 4067659521696122, guid: 87a93637c16154b7ea91ebd42e845ce5, type: 2}
       propertyPath: m_LocalRotation.x

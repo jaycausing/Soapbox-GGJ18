@@ -13,7 +13,6 @@ public class EnemyBehavior : MonoBehaviour {
 		playerPos = p.transform;
 	}
 
-	// Use this for initialization
 	void Start () {
 		world = GameObject.FindWithTag("World").transform;
 		Physics.IgnoreCollision(world.GetComponent<Collider>(), GetComponent<Collider>());
@@ -22,9 +21,12 @@ public class EnemyBehavior : MonoBehaviour {
 		agent.destination = playerPos.position;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void OnTriggerEnter(Collider coll){
+		Destroy(this.gameObject);
 	}
 
 }

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 	public bool activeSpawn = false;
 
 	void Awake(){
-		world = GameObject.Find("World");
+		world = GameObject.FindWithTag("World");
 	}
 
 
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour {
                 Quaternion spawnRotation = Quaternion.identity;
 				//TODO: rotate enemy sprite towards player when spawning
                 Instantiate (bad, spawnPos, spawnRotation);
+				Debug.Log("Spawning");
                 yield return new WaitForSeconds (spawnWait);
             }
             yield return new WaitForSeconds (waveWait);
