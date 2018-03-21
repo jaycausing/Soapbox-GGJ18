@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour {
 
+    public float Speed = 5.0f;
+
     public GameObject SoundWave;
     ScreamInput AAAA; 
 
@@ -21,7 +23,7 @@ public class WaveSpawner : MonoBehaviour {
         if (AAAA.activeScream == true){
             Debug.Log("Launching rings");
             GameObject wave = Instantiate(SoundWave, transform.position, transform.rotation); 
-            Vector3 force = transform.forward * 5.0f;
+            Vector3 force = transform.forward * Speed;
             wave.GetComponent<Rigidbody>().AddForce(force);
             AAAA.activeScream = false;
         }
