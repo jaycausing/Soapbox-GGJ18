@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 
 	void Awake(){
 		world = GameObject.FindWithTag("World");
+		
 	}
 
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		//TODO: put all this in a seperate function for after starting in game
 		timeLeft -= Time.deltaTime;
+		//TODO: Exit timer after game over
 		if(timeLeft <= 0){
 			Debug.Log("Times Up");
 		}

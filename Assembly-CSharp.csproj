@@ -145,6 +145,7 @@
      <Compile Include="Assets\Scripts\SW_Collision.cs" />
      <Compile Include="Assets\Scripts\WaveSpawner.cs" />
      <Compile Include="Assets\SoundwaveScript.cs" />
+     <Compile Include="Assets\UpdateSky.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />
