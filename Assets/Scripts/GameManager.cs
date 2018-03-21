@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	public int timeStart = 60;
-	//public int time;
+	public float timeLeft = 60;
 	public GameObject world;
-	//Collider wCollider;
 	public int pplCount;
 	public float spawnWait;
 	public float startWait;
@@ -35,7 +33,11 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//if(time < timeStart)
+		//TODO: put all this in a seperate function for after starting in game
+		timeLeft -= Time.deltaTime;
+		if(timeLeft <= 0){
+			Debug.Log("Times Up");
+		}
 	}
 
 	IEnumerator SpawnEnemy(){
