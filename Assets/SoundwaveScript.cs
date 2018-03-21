@@ -7,7 +7,7 @@ public class SoundwaveScript : MonoBehaviour {
 	Rigidbody rb;
 	public int timeToLive;
 	public int timeAlive;
-	public float speed;
+	//public float speed;
 	
 	void Awake(){
 		rb = GetComponent<Rigidbody>();
@@ -20,7 +20,7 @@ public class SoundwaveScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rb.AddForce(transform.forward * speed);
+		//rb.AddForce(transform.forward * speed);
 		timeAlive++;
 	}
 
