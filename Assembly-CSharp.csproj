@@ -139,6 +139,7 @@
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
      <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\MicInput.cs" />
      <Compile Include="Assets\Scripts\ScreamInput.cs" />
      <Compile Include="Assets\Scripts\SW_Collision.cs" />
      <Compile Include="Assets\Scripts\WaveSpawner.cs" />

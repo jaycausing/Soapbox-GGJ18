@@ -5,14 +5,17 @@ using UnityEngine;
 public class ScreamInput : MonoBehaviour {
 
 	public AudioClip aud;
+	private string device;
 	public int minFreq = 0;
 	public int maxFreq = 0;
 
     public bool activeScream = false; //lets the other scripts know if screaming 
 	//public GameObject soundwave;
 
-	void Awake(){
+	bool isInitialized;
+	void OnEnable(){
 		aud = Microphone.Start("Built-in Microphone", true, 5, 44100);
+		isInitialized = true;
 	}
 
 	// Use this for initialization
@@ -26,17 +29,17 @@ public class ScreamInput : MonoBehaviour {
 
 	}
 	
+	int dec = 128;
 	// Update is called once per frame
 	void Update () {
+		float levelMax = 0;
 		//get mic volume
-		int dec = 128;
 		float[] waveData = new float[dec];
 		int micPosition = (Microphone.GetPosition(null))-(dec+1); // null means the first microphone
 		//Debug.Log("waveData: " + waveData.ToString());
 		aud.GetData(waveData, micPosition);
 
 		// Getting a peak on the last 128 samples
-		float levelMax = 0;
 		for (int i = 0; i < dec; i++) {
 			float wavePeak = waveData[i] * waveData[i];
 			if (levelMax < wavePeak) {
@@ -50,7 +53,7 @@ public class ScreamInput : MonoBehaviour {
             WaveSpawner spawn = gameObject.GetComponentInChildren<WaveSpawner>(); //references the spawn script to start spawning
             spawn.generateRings(); 
 			//Instantiate(soundwave, transform.position, transform.rotation);
-			//Debug.Log("AAAAAAAAAAA");
+			Debug.Log("AAAAAAAAAAA");
 		}
 	}
 }
