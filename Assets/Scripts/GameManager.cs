@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+- spawn enemies
+- keeps track of player's points
+ */
+
 public class GameManager : MonoBehaviour {
 
 	public float timeLeft = 60;
@@ -13,9 +18,12 @@ public class GameManager : MonoBehaviour {
 	public GameObject bad;
 	public bool activeSpawn = false;
 
+	GameState gs;
+	public int score;
+
 	void Awake(){
 		world = GameObject.FindWithTag("World");
-		
+		score = 0;
 	}
 
 
@@ -61,15 +69,7 @@ public class GameManager : MonoBehaviour {
 
 	Vector3 getSpawnCircumference(Collider c){
 		Vector3 wCenter = c.bounds.center;
-		//Vector3 wMin = c.bounds.min;
-		//Debug.Log("Center of sphere: " + wCenter);
-		//Debug.Log("Max bounds of sphere: " + wMin);
-		/*
-		max: 40, 0, 40
-		center: 0, -40, 0
-		min: -40, -80, -40
-		spawn coords: x, -40, z
-		 */
+		
 		float ang = Random.value * 360;
         Vector3 pos;
         pos.x = wCenter.x + 40 * Mathf.Sin(ang * Mathf.Deg2Rad);

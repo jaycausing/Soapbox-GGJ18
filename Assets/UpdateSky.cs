@@ -10,6 +10,7 @@ public class UpdateSky : MonoBehaviour {
 	public GameManager gm;
 	float t;
 	public float currentTimeLeft;
+	GameState gs;
 
 	void Awake () {
 		bg = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -23,9 +24,14 @@ public class UpdateSky : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currentTimeLeft = gm.timeLeft;
-		if(currentTimeLeft > 0.0f){
-			bg.backgroundColor = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time, t)/t);
+		if(gs.isStarted){
+			currentTimeLeft = gm.timeLeft;
+			if(currentTimeLeft > 0.0f){
+				bg.backgroundColor = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time, t)/t);
+			} else {
+				gs.endGame();
+			}
 		}
+		
 	}
 }
