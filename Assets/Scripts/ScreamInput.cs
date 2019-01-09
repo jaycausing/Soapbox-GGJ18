@@ -9,13 +9,24 @@ public class ScreamInput : MonoBehaviour {
 	public int minFreq = 0;
 	public int maxFreq = 0;
 
-    public bool activeScream = false; //lets the other scripts know if screaming 
+	private int dec = 128;
+
+    public bool IsScreaming 
+	{ 
+		get { return IsScreaming; } 
+		set { IsScreaming = value; }
+	} //lets the other scripts know if screaming 
 	//public GameObject soundwave;
 
-	bool isInitialized;
+	//bool isInitialized;
+
+	private void Awake() {
+		IsScreaming = false;
+	}
+
 	void OnEnable(){
 		aud = Microphone.Start("Built-in Microphone", true, 5, 44100);
-		isInitialized = true;
+		//isInitialized = true;
 	}
 
 	// Use this for initialization
@@ -29,8 +40,7 @@ public class ScreamInput : MonoBehaviour {
 
 	}
 	
-	int dec = 128;
-	// Update is called once per frame
+	
 	void Update () {
 		float levelMax = 0;
 		//get mic volume
@@ -49,11 +59,13 @@ public class ScreamInput : MonoBehaviour {
 		float level = Mathf.Sqrt(Mathf.Sqrt(levelMax));
 		//Debug.Log("Current input level: " + level);
 		if(level > 0.6f){
-            activeScream = true;  //is screaming 
+            IsScreaming = true;  //is screaming 
             WaveSpawner spawn = gameObject.GetComponentInChildren<WaveSpawner>(); //references the spawn script to start spawning
             spawn.generateRings(); 
 			//Instantiate(soundwave, transform.position, transform.rotation);
 			Debug.Log("AAAAAAAAAAA");
+		} else {
+			IsScreaming = false;
 		}
 	}
 }

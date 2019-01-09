@@ -9,23 +9,17 @@ public class WaveSpawner : MonoBehaviour {
     public GameObject SoundWave;
     ScreamInput AAAA; 
 
-	// Use this for initialization
-	void OnEnable () {
+	void Awake () {
         AAAA = gameObject.GetComponentInParent<ScreamInput>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void generateRings(){
-        if (AAAA.activeScream == true){
+        if (AAAA.IsScreaming == true){
             Debug.Log("Launching rings");
             GameObject wave = Instantiate(SoundWave, transform.position, transform.rotation); 
             Vector3 force = transform.forward * Speed;
             wave.GetComponent<Rigidbody>().AddForce(force);
-            AAAA.activeScream = false;
+            AAAA.IsScreaming = false;
         }
     }
 
